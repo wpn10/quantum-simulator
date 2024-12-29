@@ -7,7 +7,7 @@ router = APIRouter()
 async def create_circuit_endpoint(gates: list[dict]):
     """
     Create a quantum circuit based on the provided gate list.
-    :param gates: List of gate dictionaries, e.g., [{'type': 'H', 'target': 0}]
+    :param gates: List of gate dictionaries, e.g., [{'type': 'H', 'target': 0}], [{'type': 'X', 'target': 1}]
     """
     try:
         circuit = create_circuit(gates)
@@ -19,7 +19,7 @@ async def create_circuit_endpoint(gates: list[dict]):
 async def simulate_circuit_endpoint(gates: list[dict]):
     """
     Simulate a quantum circuit based on the provided gate list.
-    :param gates: List of gate dictionaries, e.g., [{'type': 'H', 'target': 0}]
+    :param gates: List of gate dictionaries, e.g., [{'type': 'H', 'target': 0}], [{'type': 'X', 'target': 1}]
     """
     try:
         circuit = create_circuit(gates)
