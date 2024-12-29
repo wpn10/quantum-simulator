@@ -1,4 +1,6 @@
-from qiskit import QuantumCircuit, Aer, execute
+from qiskit import QuantumCircuit
+from qiskit_aer import Aer
+from qiskit.primitives import BackendEstimator
 
 def create_circuit(gates: list[dict]):
     """
@@ -16,7 +18,7 @@ def create_circuit(gates: list[dict]):
 
 def simulate_circuit(circuit: QuantumCircuit, backend: str = "qasm_simulator") -> dict:
     backend = Aer.get_backend(backend)
-    job = execute(circuit, backend, shots=1024)
+    job = backend.run(circuit, shots=1024)
     result = job.result()
     counts = result.get_counts(circuit)
     return counts
