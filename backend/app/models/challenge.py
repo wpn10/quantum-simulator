@@ -1,6 +1,5 @@
-# backend/app/models/challenge.py
 from sqlalchemy import Column, Integer, String, JSON
-from app.models.database import Base
+from backend.app.models.database import Base
 
 class QuantumChallenge(Base):
     __tablename__ = "quantum_challenges"
